@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Azure Storage JavaScript Client Library Sample for Table Operations</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>    
+
+    </head>
+    
+    <body style="background-image: url(https://placeimg.com/998/999/nature); background-size:cover;"> 
+        <div class="container">
+            
+            <h3> Actualización de datos</h3>
+           
+            <div class="col-lg-12">
+                    
+                    <!--información de Capacitación-->
+                    <div class="panel panel-default bg-danger">
+                          <div class="panel-heading bg-danger" >
+                            <h4>
+                                    Datos de la capacitación  
+                            </h4>
+                            </div>
+                          <div class="panel-body">
+                            
+<form class="col-lg-12" id="myForm" method="get" onsubmit="">
+                    <div class="col-lg-12">
+                              
+                            
+                              <p>Tipo de Capacitación</p>
+                    
+                    
+                          <label class="radio-inline"><input type="radio" name="op-1" value="Curso" checked="" >Curso</label>    
+                          
+                          <label class="radio-inline"><input type="radio" name="op-1" value="Exposición/Presentación" >Exposición/Presentación</label>    
+                          
+                          <label class="radio-inline"><input type="radio" name="op-1" value="Reunión" >Reunión</label> 
+                          <hr>
+                    </div>
+                    
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">Nombre del tema</span>
+                            <input id="nombre" type="text" class="form-control"  value="" >
+                        </div>
+                        <br>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Fecha</span>
+                                    <input id="fecha" class="form-control" type="text" value="" >
+                                </div>
+                                
+                                <br>
+                        
+                    
+                        <div class="input-group">
+                            <span class="input-group-addon">Lugar</span>
+                            <input id="lugar" type="text" class="form-control"  value="" >
+                        </div>
+                        <br>
+                    </div>
+                      <div class="col-lg-6">
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon">Nombre del Expositor 1</span>
+                        <input id="expo1" type="text" class="form-control"  value="" >
+                      </div>
+                      <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">Nombre del Expositor 2</span>
+                        <input id="expo2" type="text" class="form-control"  value="No aplica" >
+                      </div>
+                      </div>
+                       
+                          
+                        <div class="col-lg-12">
+
+                            <input class="btn btn-success" onclick="addEntity()" value="Enviar datos" />
+                        </div>
+                          </form>
+                          <div class="col-lg-12">
+                              <p></p>
+                          </div>
+
+<hr>
+                          <div class="col-lg-12" id="result"></div>
+
+                        </div>
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+            
+            <script src="js/azure-storage.common.js"></script> 
+            <script src="js/azure-storage.table.js"></script> 
+            <script src="js/azure-functions.js"></script> 
+            
+            
+            <div class="hidden" id="tables"></div>
+    </body> 
+</html>
