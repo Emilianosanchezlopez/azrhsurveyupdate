@@ -1,3 +1,4 @@
+var b = "puro alambre";
 var account = "encuestasmainbitstorage";
 var table = '';
 var tableUri = '';
