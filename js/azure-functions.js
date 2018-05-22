@@ -1,7 +1,7 @@
 var account = "encuestasmainbitstorage";
-var sas = "?sv=2017-07-29&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-08-01T00:04:16Z&st=2018-05-04T16:04:16Z&spr=https&sig=Mu7zPYYw4ZhYNlh9HaQlyOp5kUqrcyd8PxtkKz4dGLg%3D";
 var table = '';
 var tableUri = '';
+var sas="?sv=2017-07-29&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-08-01T00:04:16Z&st=2018-05-04T16:04:16Z&spr=https&sig=Mu7zPYYw4ZhYNlh9HaQlyOp5kUqrcyd8PxtkKz4dGLg%3D";
 
 function checkParameters() {
     account 
