@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Resultados encuestas RH</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>    
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<style>
+    @font-face {
+  font-family: 'Roboto';
+  src: url('Roboto.ttf') format('truetype'); 
+}  
+#mytable{
+    font-size: 10px;
+}
+    .panel-body, .panel{
+
+        background-color: rgba(255, 255, 255, .8) !important;
+        width: fit-content;
+    }
+</style>
+</head>
+    
+<body > 
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+<div class="navbar-header">
+<a class="navbar-brand" href="#">
+  <img alt="Brand" src="images/mainbit.png" style="height:40px; top:-10px;position:relative;">
+</a>
+<ul class="nav navbar-nav">
+  
+  
+</ul>
+</div>
+<h4 class="navbar-text navbar-left">Encuesta de Evaluación del Programa de Capacitación</h4>
+</div>                            
+</nav>
+<div class="container-fluid">
+
+
+<form id="panda" method="get">
+  <div class="col-lg-12">
+
+    <!--información de Capacitación-->
+    <div class="panel panel-primary">
+      <div class="panel-heading " >
+        <h5>
+        RESULTADOS DE LAS ENCUESTAS.
+        </h5>
+        <a id="recargar" class="btn btn-success" onclick="refreshEntityList()">Recargar datos</a>
+
+      </div>
+      <div class="panel-body">
+
+        <div class="row" id="result"></div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+<script>
+function sur() {
+
+  setTimeout("refreshdatatable()", 1);
+}
+
+function refreshdatatable(){
+      // $('#mytable').DataTable();
+var handleDataTableButtons = function() {
+    "use strict";
+    0 !== $("#mytable").length && $("#mytable").DataTable({
+      dom: "Bfrtip",
+      buttons: [{
+        extend: "copy",
+        className: "btn-sm"
+      }, {
+        extend: "csv",
+        className: "btn-sm"
+      }, {
+        extend: "excelHtml5",
+        className: "btn-sm"
+      }, {
+        extend: "pdf",
+        className: "btn-sm"
+      }, {
+        extend: "print",
+        className: "btn-sm"
+      }],
+      responsive: !0
+    })                
+  },
+  TableManageButtons = function() {
+    "use strict";
+    return {
+      init: function() {
+        handleDataTableButtons()
+      }
+    }
+  }();
+              TableManageButtons.init();
+};  
+                            
+</script>
+
+        
+<script src="js/azure-storage.common.js"></script> 
+<script src="js/azure-storage.table.js"></script> 
+
+<script src="js/resultados.js"></script> 
+        
+<script>
+var my_func = function(e) {
+    e.preventDefault();
+    addEncuesta();
+    setTimeout(function(){ location.reload(); }, 1000);
+    
+};
+
+// your form
+var form = document.getElementById("panda");
+
+// attach event listener
+form.addEventListener("submit", my_func);
+</script>
+<div class="hidden" id="tables"></div>
+</body> 
+    
+<script src="js/dataTables.buttons.min.js"></script>
+<script src="js/buttons.bootstrap.min.js"></script>
+<script src="js/pdfmake.min.js"></script>
+<!--vsf fotns siempre va después de pdfmake-->
+<script src="js/vfs_fonts.js"></script>
+
+<script src="js/buttons.html5.min.js"></script>
+<script src="js/buttons.print.min.js"></script>
+</html>
