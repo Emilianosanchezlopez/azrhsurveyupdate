@@ -114,6 +114,10 @@ function refreshEntityList() {
                             '<th>FORTALEZAS</th>',
                             '<th>MEJORAS</th>',
                             '<th>OTROS</th>',
+                            '<th>FECHA</th>',
+                            '<th>LUGAR</th>',
+                            '<th>INSTRUCTOR 1</th>',
+                            '<th>INSTRUCTOR 2</th>',
                             
                             // '<th>Timestamp</th>',
                             // '<th>Operations</th>',
@@ -201,6 +205,18 @@ function refreshEntityList() {
                 if (typeof entity.ComOtros !== 'undefined') {
                     Otros = entity.ComOtros._;
                 }
+                if (typeof entity.Fecha !== 'undefined') {
+                    Fecha = entity.Fecha._;
+                }
+                if (typeof entity.Lugar !== 'undefined') {
+                    Lugar = entity.Lugar._;
+                }
+                if (typeof entity.Expositor1 !== 'undefined') {
+                    Expo1 = entity.Expositor1._;
+                }
+                if (typeof entity.Expositor2 !== 'undefined') {
+                    Expo2 = entity.Expositor2._;
+                }
                
                 output.push('<tr>',
                                 '<td>', entity.PartitionKey._, '</td>',
@@ -229,6 +245,10 @@ function refreshEntityList() {
                                 '<td>', Fort, '</td>',
                                 '<td>', Mejora, '</td>',
                                 '<td>', Otros, '</td>',
+                                '<td>', Fecha, '</td>',
+                                '<td>', Lugar, '</td>',
+                                '<td>', Expo1, '</td>',
+                                '<td>', Expo2, '</td>',
                                 
                                 
                                 // '<td>', entity.Timestamp._, '</td>',
